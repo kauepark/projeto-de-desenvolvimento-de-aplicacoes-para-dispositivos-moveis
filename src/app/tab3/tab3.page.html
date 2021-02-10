@@ -1,0 +1,38 @@
+<ion-content padding>
+  <ion-refresher (ionRefresh)="atualizar($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-item *ngIf="nenhum" color="transparent">
+    <ion-img src="/assets/img/nenhum.png"></ion-img>
+  </ion-item>
+  <ion-item-divider *ngIf="!nenhum" text-center color="primary">Livros que estou lendo</ion-item-divider>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-xs="12" size-sm="6" size-md="4" size-lg="3" *ngFor="let item of livrosLendo">
+        <ion-card color>
+          <img src="{{item.volumeInfo.imageLinks?.thumbnail}}" class='img'>
+          <ion-card-header>
+            <ion-card-subtitle text-center color="dark">
+              {{item.volumeInfo.title}}
+            </ion-card-subtitle>
+            <ion-card-content text-center>
+              <ion-item>
+                <ion-button (click)='abrirLivro(item.id)' size='medium'>
+                  <ion-icon name='md-book'></ion-icon>
+                </ion-button>
+                <ion-button (click)='add(item)' size='medium'>
+                  <ion-icon name="ios-add-circle"></ion-icon>
+                </ion-button>
+                <ion-button (click)='remove(item)' size='medium'>
+                  <ion-icon name='md-trash'></ion-icon>
+                </ion-button>
+              </ion-item>
+            </ion-card-content>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

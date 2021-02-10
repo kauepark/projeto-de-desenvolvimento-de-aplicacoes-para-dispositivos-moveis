@@ -1,0 +1,36 @@
+
+ion-content{
+  --background: url(../../assets/img/fundo.png)!important;
+  }
+    ion-item{
+      --background: transparent;
+    }
+
+    ion-card {
+      
+      width: 95%;
+      height: 90%;
+      background-position: center;
+      border-radius: 0px 0px 30px 0px  !important;
+              --background: transparent;
+       }
+       ion-card-subtitle{
+        font-weight:bold;
+        font-size: 15px;
+        color: cornflowerblue;
+        }
+        ion-card-title{
+          font-weight:bold;
+        }
+
+        .img{
+          height: 300px;
+          border-radius: 0px 0px 80px 0px;
+          background-repeat: no-repeat;
+          background-size:cover;
+          background-position: 
+          center center;
+          width: 60%;
+          position: relative; /* ADDED */
+        
+     }

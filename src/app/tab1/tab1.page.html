@@ -1,0 +1,28 @@
+<ion-content>
+
+  <ion-searchbar color="primary" placeholder="Pesquisar livro" (ionChange)="buscarLivros($event)">
+  </ion-searchbar>
+  <ion-list *ngFor="let item of livros">
+    <ion-item color='transparent'>
+      <ion-thumbnail slot="start" *ngIf="item.volumeInfo.imageLinks">
+        <img src="{{item.volumeInfo.imageLinks?.thumbnail}}">
+      </ion-thumbnail>
+      <ion-label>
+        <ion-text id="titulo">{{item.volumeInfo.title}}</ion-text>
+        <br>
+        <strong>Autor(es):</strong> {{item.volumeInfo.authors}}
+        <br *ngIf="item.volumeInfo.publishedDate">
+        <strong *ngIf="item.volumeInfo.publishedDate">Data de publicação:</strong> {{item.volumeInfo.publishedDate | date:'dd/MM/yyyy'}}
+        <br *ngIf="item.volumeInfo.publisher">
+        <strong *ngIf="item.volumeInfo.publisher">Editora:</strong> {{item.volumeInfo.publisher}}
+        <br *ngIf="item.volumeInfo.pageCount">
+        <strong *ngIf="item.volumeInfo.pageCount">Número de páginas:</strong> {{item.volumeInfo.pageCount}}
+      </ion-label>
+      <ion-button (click)='add(item)' fill='clear' size='medium'>
+        <ion-icon name="ios-add-circle"></ion-icon>
+      </ion-button>
+      <ion-button (click)='andamento(item)' fill='clear' size='medium'>
+        <ion-icon name='ios-bookmarks'></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>

@@ -1,0 +1,38 @@
+ion-toolbar {
+    --background: url(../../assets/img/backgroundd.png)!important;
+}
+
+
+
+
+ion-content{
+    --background: url(../../assets/img/fundo.png)!important;
+    }
+          ion-card {
+        
+        width: 95%;
+        height: 90%;
+        background-position: center;
+        border-radius: 0px 0px 0px 0px  !important;
+                --background: transparent;
+         }
+         ion-card-title{
+          font-weight:bold;
+          font-size: 15px;
+                    }
+          ion-card-title{
+            font-weight:bold;
+          }
+  
+          .img{
+            height: 100px;
+            border-radius: 0px 0px 10px 0px;
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position: 
+            center center;
+            width: 30%;
+            position: relative; /* ADDED */
+          
+       }
+  

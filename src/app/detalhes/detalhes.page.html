@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="goBack()">
+        <ion-icon color='light' name="md-arrow-round-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title color='light'>
+      Detalhes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <img src="{{livro.thumbnail}}" class='img'>
+      </ion-card-title>
+      <p *ngFor="let author of livro.authors">{{author}}</p>
+      <p text-wrap>{{livro.publisher}}</p>
+      <p>{{livro.publishedDate | date:'dd/MM/yyyy'}}</p>
+      <p>{{livro.pageCount}} Páginas</p>
+      {{livro.title}}
+      {{livro.subtitle}}
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card color='light'>
+    <ion-card-content>
+      <strong>Descrição: </strong>{{livro.description}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
